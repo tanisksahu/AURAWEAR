@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that sets up TanStack Router with all routes (home, shop, studio, wardrobe, try-on, occasion, checkout), wraps the app in CartProvider, and renders a shared Layout with Navigation and footer.",
+  "frontend/src/pages/VirtualTryOnPage.tsx": "Virtual Try-On page with an interactive 3D avatar rendered via React Three Fiber, a product selector that updates the avatar's outfit colors, and side panels showing AI size recommendations and returns probability scores based on the user's saved measurements.",
+  "frontend/src/pages/SmartOccasionPage.tsx": "Smart Occasion Agent page where users type a free-text occasion description, which is parsed client-side to detect style keywords, then generates 3 complete Look Cards each with 4 product items, total INR price, and an \"Add Full Look to Cart\" button.",
+  "frontend/src/pages/CheckoutPage.tsx": "Checkout confirmation page displaying the full cart summary with item images, quantities, and prices in INR, a total amount, a confirmation message, and actions to return to shop or clear the cart."
+}

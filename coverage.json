@@ -1,0 +1,282 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T10:25:34.278Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 13,
+    "implemented": 8,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Build the backend data model and API for the product catalog. Store clothing items with fields: id, name, category, price (INR), description, sizes, colors, tags, imageUrl, stock, and isTrending flag. Expose query functions: getAllProducts, getProductById, getProductsByCategory, and a keyword/tag-based search function (searchProducts) that accepts a natural language query string and returns matching products by matching against name, tags, category, and price range parsed from the query.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Build a Smart Occasion Agent page where users type a free-text occasion description (e.g. 'I have a college fest next week'). The page parses keywords from the input (occasion type, formality, season) and calls searchProducts to return 3 curated outfit suggestions, each showing a complete look: top, bottom, footwear, and accessory. Display each outfit as a 'Look Card' with all items, estimated total price in INR, and an 'Add Full Look to Cart' button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SmartOccasionPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SmartOccasionPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Implement a persistent shopping cart accessible site-wide via a cart icon in the navigation bar. Cart state is managed client-side (React state / context). The cart drawer/panel shows: item name, image, price, quantity controls, and remove button. Display cart total in INR. Include a 'Proceed to Checkout' button (checkout can be a confirmation screen — no payment integration required).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/components/CartDrawer.tsx",
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/components/CartDrawer.tsx",
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Apply a bold, futuristic dark-fashion visual theme across the entire application. Use a near-black background (#0A0A0A or similar), high-contrast accent in electric gold/amber (#F5A623 or similar), sharp sans-serif typography (e.g. Inter or Space Grotesk), and subtle glassmorphism card styles. Navigation should be a sticky dark navbar with the AURAWEAR wordmark logo. The overall aesthetic should feel premium, tech-forward, and aspirational — targeting fashion-conscious Gen Z users.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Seed the backend with at least 20 realistic clothing products for the AURAWEAR catalog spanning categories: Tops, Bottoms, Outerwear, Accessories, Footwear. Include diverse tags (streetwear, minimal, luxury, casual, formal), price range ₹500–₹8000, multiple sizes, and varied colors. Mark 6–8 products as isTrending=true.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Build backend support for user Style Profiles. Each profile stores: userId (principal), bodyMeasurements (height, weight, chest, waist, hips), stylePreferences (array: streetwear, minimal, luxury, casual, formal), savedOutfits (array of outfit objects with product IDs), and trendAlerts (array of strings). Expose functions: createOrUpdateStyleProfile, getStyleProfile, saveOutfit, removeSavedOutfit.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Build backend support for Wardrobe Optimizer. Store a user's wardrobe items (productId or custom item name, category, color). Expose functions: addWardrobeItem, removeWardrobeItem, getWardrobe, and getWardrobeSuggestions which returns a list of product recommendations based on gaps in the user's wardrobe categories and colors.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Build backend support for Trend Radar. Maintain a curated list of trending items (populated by admin or seeded data) with fields: productId, trendScore, trendTags (e.g. 'streetwear 2025', 'earth tones'), and dateAdded. Expose: getTrendingItems, and getPersonalizedTrends(userId) which filters trending items by the user's style preferences.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Build a homepage with: (1) a full-viewport hero section with headline 'Meet Your AI Stylist', tagline 'Your Style. Your Data. Your AI.', and a CTA button 'Start Your Style Journey'; (2) an interactive demo preview section showing a simulated AI outfit recommendation with a sample query input and 3 product card results; (3) a features section showcasing the five AI agents (Style Twin, Occasion Agent, Wardrobe Optimizer, Trend Radar, Virtual Try-On) with icons and brief descriptions; (4) a social proof section with 3 mock testimonials and brand stats (e.g. '10,000+ Styles Generated', '98% Fit Accuracy').",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Build an AI Studio page (user dashboard) with four tabs: (1) Style Twin — form to enter body measurements and select style preferences (streetwear, minimal, luxury, casual, formal), save profile to backend, display current profile; (2) Saved Outfits — grid of outfits saved by the user, each showing product thumbnails and a remove button; (3) AI Suggestions — display personalized product recommendations based on the user's style preferences fetched from the backend; (4) Trend Alerts — display trending items personalized to the user's style profile.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AIStudioPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AIStudioPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Build a Shop page with an 'Ask AI' search bar at the top. When the user types a natural language query (e.g. 'casual black oversized hoodie under ₹2000') and submits, call the backend searchProducts function and display matching products in a responsive grid of product cards. Each card shows: image, name, price in INR (₹), category, available sizes, and an 'Add to Cart' button. Include a category filter sidebar (All, Tops, Bottoms, Outerwear, Accessories, Footwear).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ShopPage.tsx",
+          "frontend/src/components/ProductCard.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ShopPage.tsx",
+          "frontend/src/components/ProductCard.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Build a Wardrobe Optimizer page where users can: (1) add wardrobe items by selecting category and color; (2) view their current wardrobe as a visual grid; (3) click 'Optimize My Wardrobe' to call getWardrobeSuggestions and display recommended products as cards; (4) see suggested outfit combinations (groupings of 3–4 items) generated from their wardrobe.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/WardrobeOptimizerPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/WardrobeOptimizerPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Build a Virtual Try-On page with a 3D outfit visualizer. Display a static 3D avatar (using Three.js / React Three Fiber) that can be dressed with selected clothing items. When the user selects a product from the shop, it appears on the avatar. Show an auto-size recommendation panel based on measurements from the user's Style Profile (height, weight, chest). Display a simulated 'Returns Probability Score' (e.g. 'Low Return Risk: 94% fit confidence') based on size match.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/VirtualTryOnPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/VirtualTryOnPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/aurawear-logo.dim_400x120.png",
+    "frontend/public/assets/generated/feature-style-twin.dim_600x400.png",
+    "frontend/public/assets/generated/feature-trend-radar.dim_600x400.png",
+    "frontend/public/assets/generated/feature-try-on.dim_600x400.png",
+    "frontend/public/assets/generated/hero-bg.dim_1920x1080.png",
+    "frontend/public/assets/generated/product-cargo-brown.dim_600x600.png",
+    "frontend/public/assets/generated/product-chain-gold.dim_600x600.png",
+    "frontend/public/assets/generated/product-hoodie-black.dim_600x600.png",
+    "frontend/public/assets/generated/product-sneakers-white.dim_600x600.png",
+    "frontend/public/assets/generated/product-tshirt-white.dim_600x600.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/CartDrawer.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AIStudioPage.tsx",
+    "frontend/src/pages/CheckoutPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ShopPage.tsx",
+    "frontend/src/pages/SmartOccasionPage.tsx",
+    "frontend/src/pages/VirtualTryOnPage.tsx",
+    "frontend/src/pages/WardrobeOptimizerPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

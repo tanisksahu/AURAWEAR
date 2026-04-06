@@ -1,0 +1,75 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T10:25:34.274Z",
+  "summary": "The diff implements the majority of the AURAWEAR MVP requirements across both backend (Motoko) and frontend (React). All major pages, backend functions, cart context, navigation, and styling are present. A few acceptance criteria details are partially implemented or difficult to confirm from truncated diffs, but overall coverage is strong. Minor gaps identified below.",
+  "missing_requirements": [
+    {
+      "requirement": "searchProducts should parse price range from natural language query (e.g., 'under 2000') and filter by price range",
+      "reason": "The visible backend searchProducts implementation only matches against name, category, and tags using string containment. No price range parsing logic (e.g., extracting 'under 2000' and filtering by price) is visible in the truncated Motoko code.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "requirement": "REQ-3: getWardrobeSuggestions outfit combination logic must return at least 5 outfit groupings from wardrobe items (backend concern per AC)",
+      "reason": "The frontend WardrobeOptimizerPage generates outfit combinations client-side via generateOutfitCombinations, not from the backend getWardrobeSuggestions function. The AC specifically states outfit combination logic should return at least 5 outfit groupings, implying backend responsibility, but the backend is truncated and cannot confirm this.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/WardrobeOptimizerPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "At least 20 products seeded in the backend catalog spanning all five categories with price range 500-8000 INR, at least 6 isTrending=true, diverse tags",
+      "reason": "The backend main.mo is truncated and seed data is not visible in the diff. A useSeedProducts hook is referenced in the frontend but the actual seeded product data in the backend cannot be confirmed from the provided truncated file.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Client-side outfit combination generation in WardrobeOptimizerPage via generateOutfitCombinations function",
+      "reason": "The spec and AC imply outfit combination logic should come from the backend getWardrobeSuggestions. The frontend implements its own generateOutfitCombinations function working purely on client-side wardrobe data, which was not explicitly requested as a frontend-only feature.",
+      "evidence": [
+        "frontend/src/pages/WardrobeOptimizerPage.tsx"
+      ]
+    },
+    {
+      "description": "Footer with caffeine.ai branding and attribution link",
+      "reason": "The spec does not mention a footer with any external branding or attribution. App.tsx includes a footer crediting caffeine.ai which was not part of the build request.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CartDrawer.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AIStudioPage.tsx",
+    "frontend/src/pages/CheckoutPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ShopPage.tsx",
+    "frontend/src/pages/SmartOccasionPage.tsx",
+    "frontend/src/pages/VirtualTryOnPage.tsx",
+    "frontend/src/pages/WardrobeOptimizerPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

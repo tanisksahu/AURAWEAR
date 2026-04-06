@@ -1,0 +1,161 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-homepage-with-1-a-full-viewport-hero-section-with-headline-meet-your-ai-stylist-tagline-your-style-your-data-your-ai-and-a-cta-button-start-your-style-journey-2-an-interactive-demo-preview-section-showing-a-simulated-ai-outfit-recommendation-with-a-sample-query-input-and-3-product-card-results-3-a-features-section-showcasing-the-five-ai-agents-style-twin-occasion-agent-wardrobe-optimizer-trend-radar-virtual-try-on-with-icons-and-brief-descriptions-4-a-social-proof-section-with-3-mock-testimonials-and-brand-stats-e-g-10-000-styles-generated-98-fit-accuracy",
+      "featureTitle": "Build a homepage with: (1) a full-viewport hero section with headline 'Meet Your AI Stylist', tagline 'Your Style. Your Data. Your AI.', and a CTA button 'Start Your Style Journey'; (2) an interactive demo preview section showing a simulated AI outfit recommendation with a sample query input and 3 product card results; (3) a features section showcasing the five AI agents (Style Twin, Occasion Agent, Wardrobe Optimizer, Trend Radar, Virtual Try-On) with icons and brief descriptions; (4) a social proof section with 3 mock testimonials and brand stats (e.g. '10,000+ Styles Generated', '98% Fit Accuracy').",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-ai-studio-page-user-dashboard-with-four-tabs-1-style-twin-form-to-enter-body-measurements-and-select-style-preferences-streetwear-minimal-luxury-casual-formal-save-profile-to-backend-display-current-profile-2-saved-outfits-grid-of-outfits-saved-by-the-user-each-showing-product-thumbnails-and-a-remove-button-3-ai-suggestions-display-personalized-product-recommendations-based-on-the-user-s-style-preferences-fetched-from-the-backend-4-trend-alerts-display-trending-items-personalized-to-the-user-s-style-profile",
+      "featureTitle": "Build an AI Studio page (user dashboard) with four tabs: (1) Style Twin — form to enter body measurements and select style preferences (streetwear, minimal, luxury, casual, formal), save profile to backend, display current profile; (2) Saved Outfits — grid of outfits saved by the user, each showing product thumbnails and a remove button; (3) AI Suggestions — display personalized product recommendations based on the user's style preferences fetched from the backend; (4) Trend Alerts — display trending items personalized to the user's style profile.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AIStudioPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-shop-page-with-an-ask-ai-search-bar-at-the-top-when-the-user-types-a-natural-language-query-e-g-casual-black-oversized-hoodie-under-2000-and-submits-call-the-backend-searchproducts-function-and-display-matching-products-in-a-responsive-grid-of-product-cards-each-card-shows-image-name-price-in-inr-category-available-sizes-and-an-add-to-cart-button-include-a-category-filter-sidebar-all-tops-bottoms-outerwear-accessories-footwear",
+      "featureTitle": "Build a Shop page with an 'Ask AI' search bar at the top. When the user types a natural language query (e.g. 'casual black oversized hoodie under ₹2000') and submits, call the backend searchProducts function and display matching products in a responsive grid of product cards. Each card shows: image, name, price in INR (₹), category, available sizes, and an 'Add to Cart' button. Include a category filter sidebar (All, Tops, Bottoms, Outerwear, Accessories, Footwear).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/ShopPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-wardrobe-optimizer-page-where-users-can-1-add-wardrobe-items-by-selecting-category-and-color-2-view-their-current-wardrobe-as-a-visual-grid-3-click-optimize-my-wardrobe-to-call-getwardrobesuggestions-and-display-recommended-products-as-cards-4-see-suggested-outfit-combinations-groupings-of-3-4-items-generated-from-their-wardrobe",
+      "featureTitle": "Build a Wardrobe Optimizer page where users can: (1) add wardrobe items by selecting category and color; (2) view their current wardrobe as a visual grid; (3) click 'Optimize My Wardrobe' to call getWardrobeSuggestions and display recommended products as cards; (4) see suggested outfit combinations (groupings of 3–4 items) generated from their wardrobe.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/WardrobeOptimizerPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-virtual-try-on-page-with-a-3d-outfit-visualizer-display-a-static-3d-avatar-using-three-js-react-three-fiber-that-can-be-dressed-with-selected-clothing-items-when-the-user-selects-a-product-from-the-shop-it-appears-on-the-avatar-show-an-auto-size-recommendation-panel-based-on-measurements-from-the-user-s-style-profile-height-weight-chest-display-a-simulated-returns-probability-score-e-g-low-return-risk-94-fit-confidence-based-on-size-match",
+      "featureTitle": "Build a Virtual Try-On page with a 3D outfit visualizer. Display a static 3D avatar (using Three.js / React Three Fiber) that can be dressed with selected clothing items. When the user selects a product from the shop, it appears on the avatar. Show an auto-size recommendation panel based on measurements from the user's Style Profile (height, weight, chest). Display a simulated 'Returns Probability Score' (e.g. 'Low Return Risk: 94% fit confidence') based on size match.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/VirtualTryOnPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-smart-occasion-agent-page-where-users-type-a-free-text-occasion-description-e-g-i-have-a-college-fest-next-week-the-page-parses-keywords-from-the-input-occasion-type-formality-season-and-calls-searchproducts-to-return-3-curated-outfit-suggestions-each-showing-a-complete-look-top-bottom-footwear-and-accessory-display-each-outfit-as-a-look-card-with-all-items-estimated-total-price-in-inr-and-an-add-full-look-to-cart-button",
+      "featureTitle": "Build a Smart Occasion Agent page where users type a free-text occasion description (e.g. 'I have a college fest next week'). The page parses keywords from the input (occasion type, formality, season) and calls searchProducts to return 3 curated outfit suggestions, each showing a complete look: top, bottom, footwear, and accessory. Display each outfit as a 'Look Card' with all items, estimated total price in INR, and an 'Add Full Look to Cart' button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/SmartOccasionPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-persistent-shopping-cart-accessible-site-wide-via-a-cart-icon-in-the-navigation-bar-cart-state-is-managed-client-side-react-state-context-the-cart-drawer-panel-shows-item-name-image-price-quantity-controls-and-remove-button-display-cart-total-in-inr-include-a-proceed-to-checkout-button-checkout-can-be-a-confirmation-screen-no-payment-integration-required",
+      "featureTitle": "Implement a persistent shopping cart accessible site-wide via a cart icon in the navigation bar. Cart state is managed client-side (React state / context). The cart drawer/panel shows: item name, image, price, quantity controls, and remove button. Display cart total in INR. Include a 'Proceed to Checkout' button (checkout can be a confirmation screen — no payment integration required).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CartDrawer.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/contexts/CartContext.tsx",
+        "frontend/src/pages/CheckoutPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-bold-futuristic-dark-fashion-visual-theme-across-the-entire-application-use-a-near-black-background-0a0a0a-or-similar-high-contrast-accent-in-electric-gold-amber-f5a623-or-similar-sharp-sans-serif-typography-e-g-inter-or-space-grotesk-and-subtle-glassmorphism-card-styles-navigation-should-be-a-sticky-dark-navbar-with-the-aurawear-wordmark-logo-the-overall-aesthetic-should-feel-premium-tech-forward-and-aspirational-targeting-fashion-conscious-gen-z-users",
+      "featureTitle": "Apply a bold, futuristic dark-fashion visual theme across the entire application. Use a near-black background (#0A0A0A or similar), high-contrast accent in electric gold/amber (#F5A623 or similar), sharp sans-serif typography (e.g. Inter or Space Grotesk), and subtle glassmorphism card styles. Navigation should be a sticky dark navbar with the AURAWEAR wordmark logo. The overall aesthetic should feel premium, tech-forward, and aspirational — targeting fashion-conscious Gen Z users.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

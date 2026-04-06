@@ -1,0 +1,207 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "AURAWEAR — AI-Powered Fashion Intelligence Platform (MVP) Frontend",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Build homepage with hero section, interactive demo, features showcase, and social proof",
+      "acceptanceCriteria": [
+        "Hero section is full-viewport with headline, tagline, and CTA visible on load.",
+        "Interactive demo section accepts a text query and displays 3 sample product cards.",
+        "All five AI agents are described in the features section.",
+        "Social proof section displays testimonials and brand stats."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the homepage with four main sections: (1) Full-viewport hero with headline 'Meet Your AI Stylist', tagline 'Your Style. Your Data. Your AI.', CTA button 'Start Your Style Journey' linking to /studio, and background using frontend/public/assets/generated/hero-bg.dim_1920x1080.png; (2) Interactive demo preview with a search input and 3 hardcoded sample product cards showing AI recommendation simulation; (3) Features section with five AI agent cards (Style Twin, Smart Occasion Agent, Wardrobe Optimizer, Trend Radar, Virtual Try-On) each with icon image (frontend/public/assets/generated/feature-style-twin.dim_600x400.png, frontend/public/assets/generated/feature-trend-radar.dim_600x400.png, frontend/public/assets/generated/feature-try-on.dim_600x400.png), name, and brief description; (4) Social proof section with 3 mock testimonials and brand stats ('10,000+ Styles Generated', '98% Fit Accuracy'). Use dark background (#0A0A0A) and electric gold accent (#F5A623). Apply glassmorphism card styling with frosted glass effect and border glow."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for HomePage at path '/' and wire it into the React Router configuration. Ensure the route is registered in the Routes component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build AI Studio dashboard page with four tabs: Style Twin profile, Saved Outfits, AI Suggestions, and Trend Alerts",
+      "acceptanceCriteria": [
+        "All four tabs are navigable and render correct content.",
+        "Style Twin tab saves profile to backend and shows confirmation.",
+        "Saved Outfits tab reads from backend and allows removal.",
+        "AI Suggestions and Trend Alerts tabs fetch and display data from backend.",
+        "Page is accessible without authentication (data scoped to anonymous principal if no login)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AIStudioPage.tsx",
+          "operation": "create",
+          "description": "Create AI Studio dashboard page with a tab navigation component showing four tabs. Tab 1 (Style Twin): Form with inputs for body measurements (height, weight, chest, waist, hips in cm/kg), multi-select checkboxes for style preferences (streetwear, minimal, luxury, casual, formal), save button calling backend.createOrUpdateStyleProfile with userId as anonymous principal, and display current profile data fetched via backend.getStyleProfile. Tab 2 (Saved Outfits): Grid of saved outfits fetched from backend.getStyleProfile().savedOutfits, each showing product thumbnails and a remove button calling backend.removeSavedOutfit. Tab 3 (AI Suggestions): Fetch personalized product recommendations using backend.getPersonalizedTrends and display as product cards. Tab 4 (Trend Alerts): Display trending items personalized to user's profile via backend.getPersonalizedTrends, showing product name, trend tags, and trend score. Use dark theme and glassmorphism card styling throughout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AIStudioPage at path '/studio' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build Shop page with AI-powered search bar and product catalog with category filters",
+      "acceptanceCriteria": [
+        "Ask AI search bar is prominently placed at the top of the Shop page.",
+        "Submitting a query calls searchProducts and displays results.",
+        "Product cards show image, name, INR price, sizes, and Add to Cart.",
+        "Category sidebar filters products client-side.",
+        "Empty state is shown when no results match."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ShopPage.tsx",
+          "operation": "create",
+          "description": "Create Shop page with prominent 'Ask AI' search bar at the top. On initial load, call backend.getAllProducts() to display all products. When user submits a query in the search bar, call backend.searchProducts(queryString) and display results. Show products in a responsive grid of ProductCard components. Include a category filter sidebar with buttons for All, Tops, Bottoms, Outerwear, Accessories, Footwear that filter results client-side. Display empty state when no products match the query or filter. Each product card shows: image (using product.imageUrl), name, price formatted as ₹{price}, category, available sizes as chips, and 'Add to Cart' button that adds the product to cart context. Use dark background and gold accent styling."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create reusable ProductCard component accepting product prop with fields: id, name, imageUrl, price, category, sizes, colors. Display product image, name, price in INR (₹{price}), category badge, sizes as chips, and 'Add to Cart' button. Apply glassmorphism card styling with hover effect. Button onClick adds product to cart context using addToCart function."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for ShopPage at path '/shop' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Wardrobe Optimizer page to manage user wardrobe, get suggestions, and view outfit combinations",
+      "acceptanceCriteria": [
+        "User can add and view wardrobe items.",
+        "Optimize button triggers backend call and shows suggestions.",
+        "Outfit combinations section displays at least 5 groupings.",
+        "Each suggested product card links to the Shop page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/WardrobeOptimizerPage.tsx",
+          "operation": "create",
+          "description": "Create Wardrobe Optimizer page with three sections: (1) Add Wardrobe Item form with dropdowns for category (Tops, Bottoms, Outerwear, Accessories, Footwear) and color, plus custom item name input, with 'Add Item' button calling backend.addWardrobeItem(userId, item) where userId is anonymous principal; (2) Current Wardrobe grid displaying items fetched via backend.getWardrobe(userId), each showing category, color, name, and remove button calling backend.removeWardrobeItem(userId, index); (3) Suggestions section with 'Optimize My Wardrobe' button that calls backend.getWardrobeSuggestions(userId) and displays recommended ProductCard components with links to /shop; (4) Outfit Combinations section showing at least 5 outfit groupings (client-side logic generating 3-4 item combinations from wardrobe), each rendered as a mini outfit card. Use dark theme and glassmorphism styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for WardrobeOptimizerPage at path '/wardrobe' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Build Virtual Try-On page with 3D avatar, outfit visualization, size recommendation, and returns probability score",
+      "acceptanceCriteria": [
+        "3D avatar is rendered using React Three Fiber and is interactive (rotatable).",
+        "Selecting a product updates the avatar's outfit display.",
+        "Size recommendation is shown based on saved profile measurements.",
+        "Returns Probability Score is displayed per selected outfit."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/VirtualTryOnPage.tsx",
+          "operation": "create",
+          "description": "Create Virtual Try-On page with a 3D canvas using React Three Fiber (@react-three/fiber and @react-three/drei). Render a static 3D avatar (simple cylinder/capsule mesh as placeholder) that is rotatable via OrbitControls. Include a product selector dropdown populated with products from backend.getAllProducts(). When a product is selected, visually update the avatar (change color/texture or add a label indicating the selected item). Fetch user's style profile via backend.getStyleProfile(userId) to get bodyMeasurements. Display a size recommendation panel showing suggested size based on height/chest/waist (simple rule-based logic: if height > 175cm suggest 'L', else 'M'). Show a simulated 'Returns Probability Score' panel with text like 'Low Return Risk: 94% fit confidence' calculated from size match. Use dark background for the Canvas and gold accent for UI panels. Use generated image frontend/public/assets/generated/feature-try-on.dim_600x400.png as a reference illustration in a header section."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for VirtualTryOnPage at path '/try-on' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Smart Occasion Agent page to generate outfit suggestions based on occasion input",
+      "acceptanceCriteria": [
+        "Occasion input field accepts free text and submits on Enter or button click.",
+        "3 Look Cards are displayed after submission, each with 4 item types.",
+        "Total price per look is calculated and shown in INR.",
+        "'Add Full Look to Cart' adds all items in the look to the cart state."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SmartOccasionPage.tsx",
+          "operation": "create",
+          "description": "Create Smart Occasion Agent page with a prominent text input for occasion description (e.g. 'I have a college fest next week') and a 'Get Outfit Suggestions' button. On submit, parse keywords from the input (client-side logic extracting words like 'fest', 'college', 'formal', 'casual') and call backend.searchProducts with a constructed query based on detected formality and season. Display 3 'Look Cards', each representing a complete outfit with 4 items: top, bottom, footwear, accessory. For each Look Card, show product images, names, individual prices, and total price in INR (sum of all 4 items). Include an 'Add Full Look to Cart' button that adds all 4 items to the cart context via addToCart. Use dark background and glassmorphism card styling for Look Cards."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for SmartOccasionPage at path '/occasion' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement persistent shopping cart with cart icon, drawer, quantity controls, and checkout flow",
+      "acceptanceCriteria": [
+        "Cart icon in nav shows item count badge.",
+        "Cart drawer opens on click and lists all added items.",
+        "Quantity can be increased/decreased; items can be removed.",
+        "Total price updates reactively.",
+        "Proceed to Checkout shows a confirmation/summary screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/CartContext.tsx",
+          "operation": "create",
+          "description": "Create CartContext using React Context API to manage cart state. Store an array of cart items, each with: productId, name, imageUrl, price, quantity. Provide functions: addToCart(product), removeFromCart(productId), updateQuantity(productId, delta), clearCart(), and a computed cartTotal in INR. Export CartProvider and useCart hook."
+        },
+        {
+          "path": "frontend/src/components/CartDrawer.tsx",
+          "operation": "create",
+          "description": "Create CartDrawer component that opens as a slide-in panel from the right. Consume cart state from CartContext. Display each cart item with image, name, price, quantity controls (+ and - buttons calling updateQuantity), and remove button. Show cart total in INR at the bottom. Include a 'Proceed to Checkout' button that navigates to /checkout. Use dark background and glassmorphism styling for the drawer."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create Navigation component as a sticky dark navbar (#0A0A0A background) with AURAWEAR logo (frontend/public/assets/generated/aurawear-logo.dim_400x120.png) on the left. Include navigation links to: Home (/), Shop (/shop), AI Studio (/studio), Wardrobe (/wardrobe), Occasion (/occasion), Try-On (/try-on). On the right, include a cart icon with a badge showing the cart item count from CartContext. Clicking the cart icon opens the CartDrawer. Use gold accent (#F5A623) for active links and hover states."
+        },
+        {
+          "path": "frontend/src/pages/CheckoutPage.tsx",
+          "operation": "create",
+          "description": "Create CheckoutPage displaying a confirmation/summary screen. Show the list of items in the cart with names, quantities, and prices. Display the total amount in INR. Include a confirmation message like 'Your order has been placed! (No payment required for MVP)'. Provide a 'Back to Shop' button linking to /shop and a 'Clear Cart' button that calls clearCart from CartContext. Use dark theme and glassmorphism styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the entire app in CartProvider from CartContext. Add Navigation component above the Routes. Add route for CheckoutPage at path '/checkout' and wire it into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply bold, futuristic dark-fashion visual theme with near-black background, electric gold accent, and glassmorphism styling",
+      "acceptanceCriteria": [
+        "All pages use the dark background and gold/amber accent consistently.",
+        "Typography is sharp, modern, and legible across all screen sizes.",
+        "Navigation bar is sticky, contains AURAWEAR logo/wordmark, and links to all main pages.",
+        "Cards use glassmorphism styling (frosted glass effect with border glow).",
+        "Design feels cohesive and premium across all pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles to apply dark-fashion theme across the entire app. Set body background to near-black (#0A0A0A). Define CSS custom properties for primary accent (electric gold #F5A623), text colors (white for headings, light gray for body), and glassmorphism card styles (backdrop-filter blur, semi-transparent background with rgba(255,255,255,0.05), border with gold glow using box-shadow). Import and configure Inter or Space Grotesk font from Google Fonts. Ensure all default elements (h1-h6, p, button) use the dark theme typography and spacing."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind config to include custom theme colors: 'dark-bg': '#0A0A0A', 'gold-accent': '#F5A623', 'card-glass': 'rgba(255,255,255,0.05)'. Add custom utilities for glassmorphism effect (backdrop-blur-md, border-gold-glow). Configure fontFamily to use 'Inter' or 'Space Grotesk' as the default sans-serif. Ensure responsive breakpoints and spacing scale support premium, tech-forward aesthetic."
+        }
+      ]
+    }
+  ]
+}

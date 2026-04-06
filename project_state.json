@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "AURAWEAR — an AI-powered fashion e-commerce platform and personalized fashion intelligence brand. Tagline: 'Your Style. Your Data. Your AI.' Targets 18–30 urban/Gen Z audience in India. Features agentic AI style agents, virtual try-on, wardrobe optimizer, trend radar, and an AI-driven shop search. Revenue model includes clothing sales, premium AI subscriptions, capsule wardrobe packages, influencer collabs, and B2B SaaS styling.",
+  "architectural_notes": [
+    "Brand: AURAWEAR | Tagline: 'Your Style. Your Data. Your AI.' | Positioning: AI-powered personalized fashion intelligence platform",
+    "Target market: 18–30 urban Indians, Gen Z, college students, young professionals in metro cities",
+    "Core differentiator: Autonomous AI Style Agents (Style Twin, Occasion Agent, Wardrobe Optimizer, Trend Radar, Virtual Try-On)",
+    "Future roadmap: AI-generated custom designs, on-demand manufacturing, zero inventory waste, predictive demand production"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- AURAWEAR brand logo — dark background, electric gold angular wordmark with a subtle aura glow effect (aurawear-logo.dim_400x120.png)\n- Homepage hero background — abstract dark fashion editorial with flowing fabric textures, deep black and gold tones, cinematic lighting (hero-bg.dim_1920x1080.png)\n- AI Style Twin feature illustration — glowing digital silhouette of a human figure with style data points radiating outward, dark theme (feature-style-twin.dim_600x400.png)\n- Trend Radar feature illustration — circular radar chart with fashion trend icons and neon gold pulse lines on dark background (feature-trend-radar.dim_600x400.png)\n- Virtual Try-On feature illustration — 3D avatar outline with holographic clothing overlay, dark background, gold accents (feature-try-on.dim_600x400.png)\n- Sample product image — oversized black hoodie on minimal dark background (product-hoodie-black.dim_600x600.png)\n- Sample product image — slim white tshirt on minimal dark background (product-tshirt-white.dim_600x600.png)\n- Sample product image — earth tone cargo pants on minimal dark background (product-cargo-brown.dim_600x600.png)\n- Sample product image — gold chain necklace accessory on dark velvet background (product-chain-gold.dim_600x600.png)\n- Sample product image — white minimalist sneakers on dark background (product-sneakers-white.dim_600x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-homepage-with-1-a-full-viewport-hero-section-with-headline-meet-your-ai-stylist-tagline-your-style-your-data-your-ai-and-a-cta-button-start-your-style-journey-2-an-interactive-demo-preview-section-showing-a-simulated-ai-outfit-recommendation-with-a-sample-query-input-and-3-product-card-results-3-a-features-section-showcasing-the-five-ai-agents-style-twin-occasion-agent-wardrobe-optimizer-trend-radar-virtual-try-on-with-icons-and-brief-descriptions-4-a-social-proof-section-with-3-mock-testimonials-and-brand-stats-e-g-10-000-styles-generated-98-fit-accuracy",
+      "title": "Build a homepage with: (1) a full-viewport hero section with headline 'Meet Your AI Stylist', tagline 'Your Style. Your Data. Your AI.', and a CTA button 'Start Your Style Journey'; (2) an interactive demo preview section showing a simulated AI outfit recommendation with a sample query input and 3 product card results; (3) a features section showcasing the five AI agents (Style Twin, Occasion Agent, Wardrobe Optimizer, Trend Radar, Virtual Try-On) with icons and brief descriptions; (4) a social proof section with 3 mock testimonials and brand stats (e.g. '10,000+ Styles Generated', '98% Fit Accuracy').",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-ai-studio-page-user-dashboard-with-four-tabs-1-style-twin-form-to-enter-body-measurements-and-select-style-preferences-streetwear-minimal-luxury-casual-formal-save-profile-to-backend-display-current-profile-2-saved-outfits-grid-of-outfits-saved-by-the-user-each-showing-product-thumbnails-and-a-remove-button-3-ai-suggestions-display-personalized-product-recommendations-based-on-the-user-s-style-preferences-fetched-from-the-backend-4-trend-alerts-display-trending-items-personalized-to-the-user-s-style-profile",
+      "title": "Build an AI Studio page (user dashboard) with four tabs: (1) Style Twin — form to enter body measurements and select style preferences (streetwear, minimal, luxury, casual, formal), save profile to backend, display current profile; (2) Saved Outfits — grid of outfits saved by the user, each showing product thumbnails and a remove button; (3) AI Suggestions — display personalized product recommendations based on the user's style preferences fetched from the backend; (4) Trend Alerts — display trending items personalized to the user's style profile.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-shop-page-with-an-ask-ai-search-bar-at-the-top-when-the-user-types-a-natural-language-query-e-g-casual-black-oversized-hoodie-under-2000-and-submits-call-the-backend-searchproducts-function-and-display-matching-products-in-a-responsive-grid-of-product-cards-each-card-shows-image-name-price-in-inr-category-available-sizes-and-an-add-to-cart-button-include-a-category-filter-sidebar-all-tops-bottoms-outerwear-accessories-footwear",
+      "title": "Build a Shop page with an 'Ask AI' search bar at the top. When the user types a natural language query (e.g. 'casual black oversized hoodie under ₹2000') and submits, call the backend searchProducts function and display matching products in a responsive grid of product cards. Each card shows: image, name, price in INR (₹), category, available sizes, and an 'Add to Cart' button. Include a category filter sidebar (All, Tops, Bottoms, Outerwear, Accessories, Footwear).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-wardrobe-optimizer-page-where-users-can-1-add-wardrobe-items-by-selecting-category-and-color-2-view-their-current-wardrobe-as-a-visual-grid-3-click-optimize-my-wardrobe-to-call-getwardrobesuggestions-and-display-recommended-products-as-cards-4-see-suggested-outfit-combinations-groupings-of-3-4-items-generated-from-their-wardrobe",
+      "title": "Build a Wardrobe Optimizer page where users can: (1) add wardrobe items by selecting category and color; (2) view their current wardrobe as a visual grid; (3) click 'Optimize My Wardrobe' to call getWardrobeSuggestions and display recommended products as cards; (4) see suggested outfit combinations (groupings of 3–4 items) generated from their wardrobe.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-virtual-try-on-page-with-a-3d-outfit-visualizer-display-a-static-3d-avatar-using-three-js-react-three-fiber-that-can-be-dressed-with-selected-clothing-items-when-the-user-selects-a-product-from-the-shop-it-appears-on-the-avatar-show-an-auto-size-recommendation-panel-based-on-measurements-from-the-user-s-style-profile-height-weight-chest-display-a-simulated-returns-probability-score-e-g-low-return-risk-94-fit-confidence-based-on-size-match",
+      "title": "Build a Virtual Try-On page with a 3D outfit visualizer. Display a static 3D avatar (using Three.js / React Three Fiber) that can be dressed with selected clothing items. When the user selects a product from the shop, it appears on the avatar. Show an auto-size recommendation panel based on measurements from the user's Style Profile (height, weight, chest). Display a simulated 'Returns Probability Score' (e.g. 'Low Return Risk: 94% fit confidence') based on size match.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-smart-occasion-agent-page-where-users-type-a-free-text-occasion-description-e-g-i-have-a-college-fest-next-week-the-page-parses-keywords-from-the-input-occasion-type-formality-season-and-calls-searchproducts-to-return-3-curated-outfit-suggestions-each-showing-a-complete-look-top-bottom-footwear-and-accessory-display-each-outfit-as-a-look-card-with-all-items-estimated-total-price-in-inr-and-an-add-full-look-to-cart-button",
+      "title": "Build a Smart Occasion Agent page where users type a free-text occasion description (e.g. 'I have a college fest next week'). The page parses keywords from the input (occasion type, formality, season) and calls searchProducts to return 3 curated outfit suggestions, each showing a complete look: top, bottom, footwear, and accessory. Display each outfit as a 'Look Card' with all items, estimated total price in INR, and an 'Add Full Look to Cart' button.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-persistent-shopping-cart-accessible-site-wide-via-a-cart-icon-in-the-navigation-bar-cart-state-is-managed-client-side-react-state-context-the-cart-drawer-panel-shows-item-name-image-price-quantity-controls-and-remove-button-display-cart-total-in-inr-include-a-proceed-to-checkout-button-checkout-can-be-a-confirmation-screen-no-payment-integration-required",
+      "title": "Implement a persistent shopping cart accessible site-wide via a cart icon in the navigation bar. Cart state is managed client-side (React state / context). The cart drawer/panel shows: item name, image, price, quantity controls, and remove button. Display cart total in INR. Include a 'Proceed to Checkout' button (checkout can be a confirmation screen — no payment integration required).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-futuristic-dark-fashion-visual-theme-across-the-entire-application-use-a-near-black-background-0a0a0a-or-similar-high-contrast-accent-in-electric-gold-amber-f5a623-or-similar-sharp-sans-serif-typography-e-g-inter-or-space-grotesk-and-subtle-glassmorphism-card-styles-navigation-should-be-a-sticky-dark-navbar-with-the-aurawear-wordmark-logo-the-overall-aesthetic-should-feel-premium-tech-forward-and-aspirational-targeting-fashion-conscious-gen-z-users",
+      "title": "Apply a bold, futuristic dark-fashion visual theme across the entire application. Use a near-black background (#0A0A0A or similar), high-contrast accent in electric gold/amber (#F5A623 or similar), sharp sans-serif typography (e.g. Inter or Space Grotesk), and subtle glassmorphism card styles. Navigation should be a sticky dark navbar with the AURAWEAR wordmark logo. The overall aesthetic should feel premium, tech-forward, and aspirational — targeting fashion-conscious Gen Z users.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Homepage with Hero Section 'Meet Your AI Stylist', interactive demo, real-time AI recommendation preview, and social proof",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "AI Style Twin (Digital Identity Agent): user uploads photos, enters measurements, links Instagram, selects style preferences to generate a dynamic evolving Style Profile",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Smart Occasion Agent: user types occasion, agent checks weather, suggests 3 outfits with full styling, budget combos, and auto-adds items to cart",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Wardrobe Optimizer Agent: user uploads existing wardrobe, AI identifies gaps, suggests essentials, creates 15+ outfit combinations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Trend Radar Agent: scans social media, influencer looks, seasonal color data, and search trends to recommend trending personalized pieces",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Virtual Try-On Agent with AR: 3D body modeling, outfit simulation, auto-size prediction, returns probability score",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "AI Studio Page: user dashboard with Style Twin profile, saved outfits, AI suggestions, trend alerts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "AI-powered shop search ('Ask AI'): natural language filtering e.g. 'casual black oversized hoodie under ₹2000'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "LinkedIn and Instagram advertisement/social media integration and promotional content for the brand",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Multi-stream revenue model: clothing sales, premium AI stylist subscription, capsule wardrobe packages, influencer AI collabs, B2B SaaS styling for other brands",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Build the backend data model and API for the product catalog. Store clothing items with fields: id, name, category, price (INR), description, sizes, colors, tags, imageUrl, stock, and isTrending flag. Expose query functions: getAllProducts, getProductById, getProductsByCategory, and a keyword/tag-based search function (searchProducts) that accepts a natural language query string and returns matching products by matching against name, tags, category, and price range parsed from the query.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Build backend support for user Style Profiles. Each profile stores: userId (principal), bodyMeasurements (height, weight, chest, waist, hips), stylePreferences (array: streetwear, minimal, luxury, casual, formal), savedOutfits (array of outfit objects with product IDs), and trendAlerts (array of strings). Expose functions: createOrUpdateStyleProfile, getStyleProfile, saveOutfit, removeSavedOutfit.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Build backend support for Wardrobe Optimizer. Store a user's wardrobe items (productId or custom item name, category, color). Expose functions: addWardrobeItem, removeWardrobeItem, getWardrobe, and getWardrobeSuggestions which returns a list of product recommendations based on gaps in the user's wardrobe categories and colors.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Build backend support for Trend Radar. Maintain a curated list of trending items (populated by admin or seeded data) with fields: productId, trendScore, trendTags (e.g. 'streetwear 2025', 'earth tones'), and dateAdded. Expose: getTrendingItems, and getPersonalizedTrends(userId) which filters trending items by the user's style preferences.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Seed the backend with at least 20 realistic clothing products for the AURAWEAR catalog spanning categories: Tops, Bottoms, Outerwear, Accessories, Footwear. Include diverse tags (streetwear, minimal, luxury, casual, formal), price range ₹500–₹8000, multiple sizes, and varied colors. Mark 6–8 products as isTrending=true.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AURAWEAR",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
